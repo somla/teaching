@@ -73,11 +73,11 @@ int main()
     
     int matrix[2][7];
 
-    a[0][0] = 3;
+    matrix[0][0] = 3;
 
     std::vector<int> v(10);
 
-    std::vector< std::vector<int> > vmatrix(10, 10);
+    std::vector< std::vector<int> > vmatrix( 10, std::vector<int>(10) ) ;
 
 
     return 0;
