@@ -1,10 +1,16 @@
 #include<iostream>
+#include<vector>
 
 // you can declare a function and later define it.
 // But you must declare before use it;
 void procedure(int *x);
 void ref(int &x);
-struct Struct;
+
+struct Struct
+{
+    int m1;
+    Struct *s;
+};
 
 // main could have two parameters,
 // The operation system will fill them
@@ -20,7 +26,6 @@ int main(int argc, char** argv)
 /*
 Pointers and refferences
 
-/*
 Let's imagine the memory like a table with 3 columns: address, name, value
 */
 int x = 4;
@@ -40,7 +45,7 @@ And & operator gives back to the address of a variable
 */
 int *p = &x; // That means p value is the address of x
 int *nullp = nullptr;
-*nullp = NULL; // depracate;
+//*nullp = NULL; // depracate, and the compiler drop warning;
 /*
 And you can get the value also with * operator
 */
@@ -86,7 +91,7 @@ delete hx; // destroy hx from heap.
 //delete hx; error to delete twice the same address;
 int *hx2 = new int(3); // you can assign value (3 in this case) to the heap variable
 
-Struct *s = new Struct();
+Struct *s = new Struct;
 (*s).m1 = 22;
 s->m1 = 23; // s->m1 is the short form of (*s).m1
 s->s = new Struct();
@@ -113,16 +118,12 @@ void ref(int &x)
 {
     x = 44;
 }
+
 int max(const std::vector<int> &v )
 {
-
+    //TODO: implement
+    return 0;
 }
-
-struct Struct
-{
-    int m1;
-    Struct *s;
-};
 
 struct NodeOfList
 {
@@ -141,16 +142,18 @@ struct NodeOfBinaryTree
 void listF()
 {
     NodeOfList firstElement;
-
     NodeOfList* currentElement = &firstElement;
-    bool cond = bool;
-    while(cond)
+    std::string s = "y";
+    while(s[0] == 'y' || s[0] == 'Y')
     {
-        int c;
-        std::cin>>c;
-        currentElement->value = c;
+        std::cout<<"Add a value to the List";
+        int value;
+        std::cin>>value;
+        currentElement->value = value;
         currentElement->next = new NodeOfList();
         currentElement = currentElement->next;
+        std::cout<<"Would you like to add a new element to the list? ";
+        std::cin>>s;
     } 
 
 }
